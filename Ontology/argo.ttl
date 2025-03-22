@@ -9,6 +9,7 @@
 @base <http://www.github/argO/2016/9/argumentsontology/> .
 
 <http://www.github/argO/2016/9/argumentsontology> rdf:type owl:Ontology ;
+                                                   owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl> ;
                                                    test:test0943e07c_ff8f_4dcc_bc0b_dbee849f4e0a "Spring 2018"@en ;
                                                    test:test4081ea94_ecbe_4908_94d3_7d6e0d99d226 "J. Neil Otte, John Beverley, Francesco Franda, Yonatan Schrieber, Brian Donohue, and Alexander P. Cox."@en ;
                                                    test:testbe2221bc_d4e7_444b_8efe_5e4e837e77e7 "ArgO: An Arguments Ontology is a small ontology created to facilitate the representation of arguments and their components: premises, conclusions, subconclusions, and suppositions."@en ;
