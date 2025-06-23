@@ -93,7 +93,8 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
               owl:inverseOf :hasConclusion ;
               rdfs:domain :sentencecontent ;
               rdfs:range :argument ;
-              rdfs:label "conclusion in"@en .
+              rdfs:label "conclusion in"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "x conclusion in y iff y has conclusion x."@en .
 
 
 ###  http://www.github/argO/2016/9/argumentsontology/contradicts
@@ -118,7 +119,8 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> ;
                rdfs:domain :argument ;
                rdfs:range :sentencecontent ;
-               rdfs:label "has conclusion"@en .
+               rdfs:label "has conclusion"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "x has conclusion y iff x is an argument, y is a sentence content, z is an act of inferring, x has continuant part y, y is affirmed or accepted, y is output of z, y is thought to be supported or justified by corresponding affirmed or accepted inputs of z."@en .
 
 
 ###  http://www.github/argO/2016/9/argumentsontology/hasPremise
