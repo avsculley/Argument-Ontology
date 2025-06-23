@@ -155,7 +155,8 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                 owl:inverseOf :suppositionIn ;
                 rdfs:domain :argument ;
                 rdfs:range :sentencecontent ;
-                rdfs:label "has supposition"@en .
+                rdfs:label "has supposition"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "x has supposition y iff x is an argument, y is a sentence content, z is an act of inferring, x has continuant part y,  y is accepted but not affirmed, y is input of z, z provides support or justification for the conclusion of x."@en .
 
 
 ###  http://www.github/argO/2016/9/argumentsontology/isContradictedBy
@@ -250,7 +251,8 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000176> ;
                rdfs:domain :sentencecontent ;
                rdfs:range :argument ;
-               rdfs:label "supposition in"@en .
+               rdfs:label "supposition in"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "x supposition in y iff y has supposition x."@en .
 
 
 ###  http://www.github/argO/2016/9/argumentsontology/undermines
