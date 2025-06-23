@@ -127,7 +127,8 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
             owl:inverseOf :premiseIn ;
             rdfs:domain :argument ;
             rdfs:range :sentencecontent ;
-            rdfs:label "has premise"@en .
+            rdfs:label "has premise"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "x has premise y iff x is an argument, y is a sentence content, z is an act of inferring, x has continaunt part y, y is affirmed, y is input of z, and z provides support or justification for the conclusion of x."@en .
 
 
 ###  http://www.github/argO/2016/9/argumentsontology/hasProperContinuantPart
@@ -220,7 +221,8 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000176> ;
            rdfs:domain :sentencecontent ;
            rdfs:range :argument ;
-           rdfs:label "premise in"@en .
+           rdfs:label "premise in"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "x premise in y iff y has premise x."@en .
 
 
 ###  http://www.github/argO/2016/9/argumentsontology/properContinuantPartOf
