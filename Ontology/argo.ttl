@@ -208,11 +208,6 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
 <http://purl.obolibrary.org/obo/BFO_0000031> rdf:type owl:Class .
 
 
-###  http://purl.obolibrary.org/obo/IAO_0000030
-<http://purl.obolibrary.org/obo/IAO_0000030> rdf:type owl:Class ;
-                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> .
-
-
 ###  http://www.github/argO/2016/9/argumentsontology#complexargument
 argumentsontology:complexargument rdf:type owl:Class ;
                                   rdfs:subClassOf :argument ,
@@ -290,7 +285,7 @@ argumentsontology:complexargument rdf:type owl:Class ;
 
 ###  http://www.github/argO/2016/9/argumentsontology/collectionofsentencecontents
 :collectionofsentencecontents rdf:type owl:Class ;
-                              rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                              rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000958> ;
                               test:test6c58c70d_1fcf_4414_be44_85e5cba8571b "J. Neil Otte"@en ;
                               rdfs:comment "Note: Collections are distinct from the related notions of sets and aggregates. Unlike sets, which can not have the same member twice, a collection can have the same item more than once. Also, unlike aggregates (see BFO Reference 2.0), for any collection C, if b if an item of C, then it is not a restriction on C  there exists_at t a mutually exhaustive and pairwise disjoint partition of C into continuants x1,  …, xn (for some n > 1) with b = xi for some 1 ≤ i ≤ n."@en ;
                               rdfs:label "collection of sentence contents"@en ;
@@ -308,7 +303,7 @@ argumentsontology:complexargument rdf:type owl:Class ;
 
 ###  http://www.github/argO/2016/9/argumentsontology/sentencecontent
 :sentencecontent rdf:type owl:Class ;
-                 rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
+                 rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000958> ;
                  test:test6c58c70d_1fcf_4414_be44_85e5cba8571b "J. Neil Otte"@en ;
                  rdfs:comment "Editor's note: Logicians usually speak of 'propositions' as reasons, premises, conclusions, and the like. For this purpose, we use the term 'statement' for reasons explained in 'ArgO: an arguments ontology 2018'. However, in an effort to remain open to other logics that have argument parts that do not consist solely of propositions, we use the term 'sentence content' as our broader category, which is designed also to represent the content of meaningful sentences that do not express propositions, such as imperatives and interrogatives. The definition is also designed to leave open whether or not a sentence content is conveyed in a form other than a sentence in a language, for instance, a stop sign."@en ;
                  rdfs:label "sentence content"@en ;
@@ -332,6 +327,10 @@ argumentsontology:complexargument rdf:type owl:Class ;
 
 ###  https://www.commoncoreontologies.org/ont00000228
 <https://www.commoncoreontologies.org/ont00000228> rdf:type owl:Class .
+
+
+###  https://www.commoncoreontologies.org/ont00000958
+<https://www.commoncoreontologies.org/ont00000958> rdf:type owl:Class .
 
 
 #################################################################
