@@ -96,10 +96,19 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
               rdfs:label "conclusion in"@en .
 
 
+###  http://www.github/argO/2016/9/argumentsontology/contradicts
+:contradicts rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :opposes ;
+             owl:inverseOf :isContradictedBy ;
+             rdfs:label "contradicts"@en .
+
+
 ###  http://www.github/argO/2016/9/argumentsontology/creates
 :creates rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001986> ;
          owl:inverseOf :iscreatedby ;
+         rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000015> ;
+         rdfs:range <http://purl.obolibrary.org/obo/BFO_0000002> ;
          rdfs:label "creates"@en ;
          <http://www.w3.org/2004/02/skos/core#definition> "X creates Y iff Y is created by X."@en .
 
@@ -108,6 +117,7 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
 :hasConclusion rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> ;
                rdfs:domain :argument ;
+               rdfs:range :sentencecontent ;
                rdfs:label "has conclusion"@en .
 
 
@@ -116,6 +126,7 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> ;
             owl:inverseOf :premiseIn ;
             rdfs:domain :argument ;
+            rdfs:range :sentencecontent ;
             rdfs:label "has premise"@en .
 
 
@@ -132,6 +143,9 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
 ###  http://www.github/argO/2016/9/argumentsontology/hasSubconclusion
 :hasSubconclusion rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                  owl:inverseOf :subconclusionIn ;
+                  rdfs:domain argumentsontology:complexargument ;
+                  rdfs:range :sentencecontent ;
                   rdfs:label "has subconclusion"@en .
 
 
@@ -139,13 +153,41 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
 :hasSupposition rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> ;
                 owl:inverseOf :suppositionIn ;
+                rdfs:domain :argument ;
+                rdfs:range :sentencecontent ;
                 rdfs:label "has supposition"@en .
+
+
+###  http://www.github/argO/2016/9/argumentsontology/isContradictedBy
+:isContradictedBy rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :isOpposedBy ;
+                  rdfs:label "is contradicted by"@en .
+
+
+###  http://www.github/argO/2016/9/argumentsontology/isNegatedBy
+:isNegatedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :isOpposedBy ;
+             owl:inverseOf :negates ;
+             rdfs:label "is negated by"@en .
+
+
+###  http://www.github/argO/2016/9/argumentsontology/isOpposedBy
+:isOpposedBy rdf:type owl:ObjectProperty ;
+             owl:inverseOf :opposes ;
+             rdfs:label "is opposed by"@en .
 
 
 ###  http://www.github/argO/2016/9/argumentsontology/isSupportedBy
 :isSupportedBy rdf:type owl:ObjectProperty ;
                owl:inverseOf :supports ;
                rdfs:label "is supported by"@en .
+
+
+###  http://www.github/argO/2016/9/argumentsontology/isUnderminedBy
+:isUnderminedBy rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :isOpposedBy ;
+                owl:inverseOf :undermines ;
+                rdfs:label "is undermined by"@en .
 
 
 ###  http://www.github/argO/2016/9/argumentsontology/iscreatedby
@@ -161,6 +203,17 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
              rdfs:label "is created by"@en .
 
 
+###  http://www.github/argO/2016/9/argumentsontology/negates
+:negates rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :opposes ;
+         rdfs:label "negates"@en .
+
+
+###  http://www.github/argO/2016/9/argumentsontology/opposes
+:opposes rdf:type owl:ObjectProperty ;
+         rdfs:label "opposes"@en .
+
+
 ###  http://www.github/argO/2016/9/argumentsontology/premiseIn
 :premiseIn rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000176> ;
@@ -173,6 +226,8 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
 :properContinuantPartOf rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000176> ;
                         rdf:type owl:TransitiveProperty ;
+                        rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000002> ;
+                        rdfs:range <http://purl.obolibrary.org/obo/BFO_0000002> ;
                         rdfs:label "proper continuant part of"@en ;
                         <http://www.w3.org/2004/02/skos/core#definition> "X proper continuant part of Y iff Y has proper continuant part X."@en .
 
@@ -180,6 +235,8 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
 ###  http://www.github/argO/2016/9/argumentsontology/subconclusionIn
 :subconclusionIn rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000176> ;
+                 rdfs:domain :sentencecontent ;
+                 rdfs:range argumentsontology:complexargument ;
                  rdfs:label "subconclusion in"@en .
 
 
@@ -194,6 +251,12 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                rdfs:domain :sentencecontent ;
                rdfs:range :argument ;
                rdfs:label "supposition in"@en .
+
+
+###  http://www.github/argO/2016/9/argumentsontology/undermines
+:undermines rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :opposes ;
+            rdfs:label "undermines"@en .
 
 
 ###  https://www.commoncoreontologies.org/ont00001816
