@@ -129,6 +129,12 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                          rdfs:label "has proper continuant part"@en .
 
 
+###  http://www.github/argO/2016/9/argumentsontology/hasSubconclusion
+:hasSubconclusion rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> ;
+                  rdfs:label "has subconclusion"@en .
+
+
 ###  http://www.github/argO/2016/9/argumentsontology/hasSupposition
 :hasSupposition rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> ;
@@ -169,6 +175,12 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                         rdf:type owl:TransitiveProperty ;
                         rdfs:label "proper continuant part of"@en ;
                         <http://www.w3.org/2004/02/skos/core#definition> "X proper continuant part of Y iff Y has proper continuant part X."@en .
+
+
+###  http://www.github/argO/2016/9/argumentsontology/subconclusionIn
+:subconclusionIn rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000176> ;
+                 rdfs:label "subconclusion in"@en .
 
 
 ###  http://www.github/argO/2016/9/argumentsontology/supports
@@ -292,6 +304,20 @@ argumentsontology:complexargument rdf:type owl:Class ;
                               <http://www.w3.org/2004/02/skos/core#definition> "An information content entity that consists of two or more sentence contents."@en .
 
 
+###  http://www.github/argO/2016/9/argumentsontology/conclusion
+:conclusion rdf:type owl:Class ;
+            rdfs:subClassOf :sentencecontent ;
+            rdfs:label "conclusion"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "A sentence content that is an affirmed or accepted output of an act of inferring, thought to be supported or justified by corresponding affirmed or accepted inputs, and is conclusion in an argument."@en .
+
+
+###  http://www.github/argO/2016/9/argumentsontology/expression
+:expression rdf:type owl:Class ;
+            rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000314> ;
+            rdfs:label "expression"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "An information quality entity that consists in patterns of character shapes given conventional linguistic meaning."@en .
+
+
 ###  http://www.github/argO/2016/9/argumentsontology/languageact
 :languageact rdf:type owl:Class ;
              rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000228> ;
@@ -299,6 +325,20 @@ argumentsontology:complexargument rdf:type owl:Class ;
              rdfs:comment "Note: Language acts include speech acts and document acts, and are a subclass of the broader class of social acts (see Reinach on social acts)"@en ;
              rdfs:label "language act"@en ;
              <http://www.w3.org/2004/02/skos/core#definition> "A planned act undertaken by an agent through the use of a language."@en .
+
+
+###  http://www.github/argO/2016/9/argumentsontology/premise
+:premise rdf:type owl:Class ;
+         rdfs:subClassOf :sentencecontent ;
+         rdfs:label "premise"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "A sentence content that is affirmed and is input to an act of inferring that provides support or justification for the conclusion of an argument."@en .
+
+
+###  http://www.github/argO/2016/9/argumentsontology/sentence
+:sentence rdf:type owl:Class ;
+          rdfs:subClassOf :expression ;
+          rdfs:label "sentence"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "An expression that must be usable on its own to express content."@en .
 
 
 ###  http://www.github/argO/2016/9/argumentsontology/sentencecontent
@@ -325,8 +365,26 @@ argumentsontology:complexargument rdf:type owl:Class ;
                                                          "\"The present king of France is bald.\""@en .
 
 
+###  http://www.github/argO/2016/9/argumentsontology/subconclusion
+:subconclusion rdf:type owl:Class ;
+               rdfs:subClassOf :sentencecontent ;
+               rdfs:label "subconclusion"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "A sentence content that bears a subconclusion in relation to a complex argument."@en .
+
+
+###  http://www.github/argO/2016/9/argumentsontology/supposition
+:supposition rdf:type owl:Class ;
+             rdfs:subClassOf :sentencecontent ;
+             rdfs:label "supposition"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "A sentence content that is accepted but not affirmed and that is input to an act of inferring that provides support or justification for the conclusion of an argument."@en .
+
+
 ###  https://www.commoncoreontologies.org/ont00000228
 <https://www.commoncoreontologies.org/ont00000228> rdf:type owl:Class .
+
+
+###  https://www.commoncoreontologies.org/ont00000314
+<https://www.commoncoreontologies.org/ont00000314> rdf:type owl:Class .
 
 
 ###  https://www.commoncoreontologies.org/ont00000958
