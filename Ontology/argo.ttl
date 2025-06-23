@@ -150,7 +150,8 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                   owl:inverseOf :subconclusionIn ;
                   rdfs:domain argumentsontology:complexargument ;
                   rdfs:range :sentencecontent ;
-                  rdfs:label "has subconclusion"@en .
+                  rdfs:label "has subconclusion"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "x has subconclusion y iff x is a complex argument, y is a sentence content, z is an act of inferring, w is an act of inferring, z and w are distinct, v is an argument, u is an argument, v and u are distinct, y is affirmed or accepted input of z, y is continuant part of v, y is affirmed or accepted output of w, y is continuant part of u, v is continuant part of x, and u is continuant part of x."@en .
 
 
 ###  http://www.github/argO/2016/9/argumentsontology/hasSupposition
@@ -243,7 +244,8 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                  rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000176> ;
                  rdfs:domain :sentencecontent ;
                  rdfs:range argumentsontology:complexargument ;
-                 rdfs:label "subconclusion in"@en .
+                 rdfs:label "subconclusion in"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "x subconclusion in y iff y has subconclusion x."@en .
 
 
 ###  http://www.github/argO/2016/9/argumentsontology/supports
