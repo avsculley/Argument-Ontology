@@ -9,8 +9,7 @@
 @base <http://www.github/argumentsontology/> .
 
 <http://www.github/argumentsontology/> rdf:type owl:Ontology ;
-                                        owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl> ,
-                                                    <https://raw.githubusercontent.com/avsculley/Argument-Ontology/refs/heads/master/Ontology/imports/ice.ttl> ;
+                                        owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl> ;
                                         <http://purl.org/dc/elements/1.1/contributor> "John Beverley, J. Neil Otte, Francesco Franda, Yonatan Schrieber, Brian Donohue and Alec Sculley"@en ;
                                         owl:versionInfo "Arguments Ontology (ArgO) v.4 -- development release"@en ;
                                         <http://www.w3.org/2004/02/skos/core#scopeNote> "ArgO: An Arguments Ontology is a small ontology created to facilitate the representation of arguments and their components: premises, conclusions, subconclusions, and suppositions."@en .
@@ -18,24 +17,6 @@
 #################################################################
 #    Annotation properties
 #################################################################
-
-###  http://github.org/test#test0943e07c_ff8f_4dcc_bc0b_dbee849f4e0a
-test:test0943e07c_ff8f_4dcc_bc0b_dbee849f4e0a rdf:type owl:AnnotationProperty ;
-                                              rdfs:label "publication date"@en ;
-                                              rdfs:subPropertyOf owl:versionInfo .
-
-
-###  http://github.org/test#test4081ea94_ecbe_4908_94d3_7d6e0d99d226
-test:test4081ea94_ecbe_4908_94d3_7d6e0d99d226 rdf:type owl:AnnotationProperty ;
-                                              rdfs:label "created by"@en ;
-                                              rdfs:subPropertyOf owl:versionInfo .
-
-
-###  http://github.org/test#test6c58c70d_1fcf_4414_be44_85e5cba8571b
-test:test6c58c70d_1fcf_4414_be44_85e5cba8571b rdf:type owl:AnnotationProperty ;
-                                              rdfs:label "term editor"@en ;
-                                              rdfs:subPropertyOf owl:versionInfo .
-
 
 ###  http://www.github/argumentsontology/example
 :example rdf:type owl:AnnotationProperty .
@@ -247,6 +228,16 @@ within the argument."""@en .
 #    Classes
 #################################################################
 
+###  http://www.github/argumentsontology#complexargument
+<http://www.github/argumentsontology#complexargument> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :argument ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :hasProperContinuantPart ;
+                                                                        owl:someValuesFrom :argument
+                                                                      ] ;
+                                                      rdfs:label "complex argument"@en ;
+                                                      <http://www.w3.org/2004/02/skos/core#definition> "An argument with at least one argument as a proper continuant part, and which has only arguments as continuant parts."@en .
+
 
 ###  http://www.github/argumentsontology/actofaccepting
 :actofaccepting rdf:type owl:Class ;
@@ -391,21 +382,12 @@ guistic meaning."""@en .
              <http://www.w3.org/2004/02/skos/core#definition> "A sentence content that is accepted input to an act of inferring."@en .
 
 
-###  http://www.github/argumentsontology#complexargument
-<http://www.github/argumentsontology#complexargument> rdf:type owl:Class ;
-                                                      rdfs:subClassOf :argument ,
-                                                                      [ rdf:type owl:Restriction ;
-                                                                        owl:onProperty :hasProperContinuantPart ;
-                                                                        owl:someValuesFrom :argument
-                                                                      ] ;
-                                                      rdfs:label "complex argument"@en ;
-                                                      <http://www.w3.org/2004/02/skos/core#definition> "An argument with at least one argument as a proper continuant part, and which has only arguments as continuant parts."@en .
-
-
-
-
-
-
+###  https://www.commoncoreontologies.org/ont00000958
+<https://www.commoncoreontologies.org/ont00000958> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
+                                                   rdfs:label "Information Content Entity"@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#altLabel> "ICE"@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "A Generically Dependent Continuant that generically depends on some Information Bearing Entity and stands in relation of aboutness to some Entity."@en .
 
 
 #################################################################
