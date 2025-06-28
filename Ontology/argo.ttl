@@ -8,12 +8,11 @@
 @prefix argumentsontology: <http://www.github/argO/2016/9/argumentsontology#> .
 @base <http://www.github/argO/2016/9/argumentsontology/> .
 
-<http://www.github/argO/2016/9/argumentsontology> rdf:type owl:Ontology ;
-                                                   owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl> ;
-                                                   test:test0943e07c_ff8f_4dcc_bc0b_dbee849f4e0a "Spring 2018"@en ;
-                                                   test:test4081ea94_ecbe_4908_94d3_7d6e0d99d226 "J. Neil Otte, John Beverley, Francesco Franda, Yonatan Schrieber, Brian Donohue, and Alexander P. Cox."@en ;
-                                                   test:testbe2221bc_d4e7_444b_8efe_5e4e837e77e7 "ArgO: An Arguments Ontology is a small ontology created to facilitate the representation of arguments and their components: premises, conclusions, subconclusions, and suppositions."@en ;
-                                                   owl:versionInfo "Arguments Ontology (ArgO) v .3 -- development release"@en .
+<http://www.github/argumentsontology/> rdf:type owl:Ontology ;
+                                        owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl> ;
+                                        test:test4081ea94_ecbe_4908_94d3_7d6e0d99d226 "John Beverley, J. Neil Otte, Francesco Franda, Yonatan Schrieber, Brian Donohue and Alec Sculley"@en ;
+                                        test:testbe2221bc_d4e7_444b_8efe_5e4e837e77e7 "ArgO: An Arguments Ontology is a small ontology created to facilitate the representation of arguments and their components: premises, conclusions, subconclusions, and suppositions."@en ;
+                                        owl:versionInfo "Arguments Ontology (ArgO) v.4 -- development release"@en .
 
 #################################################################
 #    Annotation properties
@@ -59,7 +58,7 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
 <http://purl.obolibrary.org/obo/IAO_0000117> rdf:type owl:AnnotationProperty .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/example
+###  http://www.github/argumentsontology/example
 :example rdf:type owl:AnnotationProperty .
 
 
@@ -87,7 +86,7 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
 <http://purl.obolibrary.org/obo/BFO_0000178> rdf:type owl:ObjectProperty .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/conclusionIn
+###  http://www.github/argumentsontology/conclusionIn
 :conclusionIn rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000176> ;
               owl:inverseOf :hasConclusion ;
@@ -98,14 +97,14 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
               <http://www.w3.org/2004/02/skos/core#definition> "x conclusion in y iff y has conclusion x."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/contradicts
+###  http://www.github/argumentsontology/contradicts
 :contradicts rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :opposes ;
              owl:inverseOf :isContradictedBy ;
              rdfs:label "contradicts"@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/creates
+###  http://www.github/argumentsontology/creates
 :creates rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001986> ;
          owl:inverseOf :iscreatedby ;
@@ -115,7 +114,7 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
          <http://www.w3.org/2004/02/skos/core#definition> "X creates Y iff Y is created by X."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/hasConclusion
+###  http://www.github/argumentsontology/hasConclusion
 :hasConclusion rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> ;
                rdfs:domain :argument ;
@@ -124,7 +123,7 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                <http://www.w3.org/2004/02/skos/core#definition> "x has conclusion y iff x is an argument, y is a sentence content, z is an act of inferring, x has continuant part y, y is affirmed or accepted, y is output of z, y is thought to be supported or justified by corresponding affirmed or accepted inputs of z."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/hasPremise
+###  http://www.github/argumentsontology/hasPremise
 :hasPremise rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> ;
             owl:inverseOf :premiseIn ;
@@ -134,7 +133,7 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
             <http://www.w3.org/2004/02/skos/core#definition> "x has premise y iff x is an argument, y is a sentence content, z is an act of inferring, x has continaunt part y, y is affirmed, y is input of z, and z provides support or justification for the conclusion of x."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/hasProperContinuantPart
+###  http://www.github/argumentsontology/hasProperContinuantPart
 :hasProperContinuantPart rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> ;
                          owl:inverseOf :properContinuantPartOf ;
@@ -144,17 +143,17 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                          rdfs:label "has proper continuant part"@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/hasSubconclusion
+###  http://www.github/argumentsontology/hasSubconclusion
 :hasSubconclusion rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> ;
                   owl:inverseOf :subconclusionIn ;
-                  rdfs:domain argumentsontology:complexargument ;
+                  rdfs:domain <http://www.github/argumentsontology#complexargument> ;
                   rdfs:range :sentencecontent ;
                   rdfs:label "has subconclusion"@en ;
                   <http://www.w3.org/2004/02/skos/core#definition> "x has subconclusion y iff x is a complex argument, y is a sentence content, z is an act of inferring, w is an act of inferring, z and w are distinct, v is an argument, u is an argument, v and u are distinct, y is affirmed or accepted input of z, y is continuant part of v, y is affirmed or accepted output of w, y is continuant part of u, v is continuant part of x, and u is continuant part of x."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/hasSupposition
+###  http://www.github/argumentsontology/hasSupposition
 :hasSupposition rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000178> ;
                 owl:inverseOf :suppositionIn ;
@@ -164,39 +163,39 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                 <http://www.w3.org/2004/02/skos/core#definition> "x has supposition y iff x is an argument, y is a sentence content, z is an act of inferring, x has continuant part y,  y is accepted but not affirmed, y is input of z, z provides support or justification for the conclusion of x."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/isContradictedBy
+###  http://www.github/argumentsontology/isContradictedBy
 :isContradictedBy rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf :isOpposedBy ;
                   rdfs:label "is contradicted by"@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/isNegatedBy
+###  http://www.github/argumentsontology/isNegatedBy
 :isNegatedBy rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :isOpposedBy ;
              owl:inverseOf :negates ;
              rdfs:label "is negated by"@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/isOpposedBy
+###  http://www.github/argumentsontology/isOpposedBy
 :isOpposedBy rdf:type owl:ObjectProperty ;
              owl:inverseOf :opposes ;
              rdfs:label "is opposed by"@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/isSupportedBy
+###  http://www.github/argumentsontology/isSupportedBy
 :isSupportedBy rdf:type owl:ObjectProperty ;
                owl:inverseOf :supports ;
                rdfs:label "is supported by"@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/isUnderminedBy
+###  http://www.github/argumentsontology/isUnderminedBy
 :isUnderminedBy rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf :isOpposedBy ;
                 owl:inverseOf :undermines ;
                 rdfs:label "is undermined by"@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/iscreatedby
+###  http://www.github/argumentsontology/iscreatedby
 :iscreatedby rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf <https://www.commoncoreontologies.org/ont00001816> ;
              rdf:type owl:AsymmetricProperty ,
@@ -209,18 +208,18 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
              rdfs:label "is created by"@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/negates
+###  http://www.github/argumentsontology/negates
 :negates rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf :opposes ;
          rdfs:label "negates"@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/opposes
+###  http://www.github/argumentsontology/opposes
 :opposes rdf:type owl:ObjectProperty ;
          rdfs:label "opposes"@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/premiseIn
+###  http://www.github/argumentsontology/premiseIn
 :premiseIn rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000176> ;
            rdfs:domain :sentencecontent ;
@@ -229,7 +228,7 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
            <http://www.w3.org/2004/02/skos/core#definition> "x premise in y iff y has premise x."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/properContinuantPartOf
+###  http://www.github/argumentsontology/properContinuantPartOf
 :properContinuantPartOf rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000176> ;
                         rdf:type owl:TransitiveProperty ;
@@ -239,21 +238,21 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                         <http://www.w3.org/2004/02/skos/core#definition> "X proper continuant part of Y iff Y has proper continuant part X."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/subconclusionIn
+###  http://www.github/argumentsontology/subconclusionIn
 :subconclusionIn rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000176> ;
                  rdfs:domain :sentencecontent ;
-                 rdfs:range argumentsontology:complexargument ;
+                 rdfs:range <http://www.github/argumentsontology#complexargument> ;
                  rdfs:label "subconclusion in"@en ;
                  <http://www.w3.org/2004/02/skos/core#definition> "x subconclusion in y iff y has subconclusion x."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/supports
+###  http://www.github/argumentsontology/supports
 :supports rdf:type owl:ObjectProperty ;
           rdfs:label "supports"@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/suppositionIn
+###  http://www.github/argumentsontology/suppositionIn
 :suppositionIn rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000176> ;
                rdfs:domain :sentencecontent ;
@@ -262,7 +261,7 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
                <http://www.w3.org/2004/02/skos/core#definition> "x supposition in y iff y has supposition x."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/undermines
+###  http://www.github/argumentsontology/undermines
 :undermines rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf :opposes ;
             rdfs:label "undermines"@en .
@@ -292,19 +291,19 @@ test:teste8bb6cb2_117b_4bfe_b5a6_a95b6576a498 rdf:type owl:AnnotationProperty ;
 <http://purl.obolibrary.org/obo/BFO_0000031> rdf:type owl:Class .
 
 
-###  http://www.github/argO/2016/9/argumentsontology#complexargument
-argumentsontology:complexargument rdf:type owl:Class ;
-                                  rdfs:subClassOf :argument ,
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty :hasProperContinuantPart ;
-                                                    owl:someValuesFrom :argument
-                                                  ] ;
-                                  test:test6c58c70d_1fcf_4414_be44_85e5cba8571b "J. Neil Otte"@en ;
-                                  rdfs:label "complex argument"@en ;
-                                  <http://www.w3.org/2004/02/skos/core#definition> "An argument that has some argument as a proper continuant part, and thus also some subconclusion."@en .
+###  http://www.github/argumentsontology#complexargument
+<http://www.github/argumentsontology#complexargument> rdf:type owl:Class ;
+                                                      rdfs:subClassOf :argument ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :hasProperContinuantPart ;
+                                                                        owl:someValuesFrom :argument
+                                                                      ] ;
+                                                      test:test6c58c70d_1fcf_4414_be44_85e5cba8571b "J. Neil Otte"@en ;
+                                                      rdfs:label "complex argument"@en ;
+                                                      <http://www.w3.org/2004/02/skos/core#definition> "An argument that has some argument as a proper continuant part, and thus also some subconclusion."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/actofaccepting
+###  http://www.github/argumentsontology/actofaccepting
 :actofaccepting rdf:type owl:Class ;
                 rdfs:subClassOf :languageact ;
                 test:test6c58c70d_1fcf_4414_be44_85e5cba8571b "J. Neil Otte"@en ;
@@ -313,7 +312,7 @@ argumentsontology:complexargument rdf:type owl:Class ;
                 <http://www.w3.org/2004/02/skos/core#definition> "A language act in which one posits, imagines, pretends, entertains, or otherwise supposes some statement, typically for the purpose of using it to make an inference."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/actofaffirming
+###  http://www.github/argumentsontology/actofaffirming
 :actofaffirming rdf:type owl:Class ;
                 rdfs:subClassOf :languageact ;
                 test:test6c58c70d_1fcf_4414_be44_85e5cba8571b "J. Neil Otte"@en ;
@@ -321,7 +320,7 @@ argumentsontology:complexargument rdf:type owl:Class ;
                 <http://www.w3.org/2004/02/skos/core#definition> "a language act in which a sentence content is stated implicitly or explicitly in a forceful or confident manner, which conveys to others that the agent of the language act believes or has confidence in the truth or accuracy of the sentence content."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/actofarguing
+###  http://www.github/argumentsontology/actofarguing
 :actofarguing rdf:type owl:Class ;
               rdfs:subClassOf :languageact ;
               test:test6c58c70d_1fcf_4414_be44_85e5cba8571b "J. Neil Otte"@en ;
@@ -330,7 +329,7 @@ argumentsontology:complexargument rdf:type owl:Class ;
               <http://www.w3.org/2004/02/skos/core#definition> "A language act in which one creates an argument or uses an argument with the purpose of convincing others that the conclusion of the argument is true or compelling."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/actofargumentcreation
+###  http://www.github/argumentsontology/actofargumentcreation
 :actofargumentcreation rdf:type owl:Class ;
                        rdfs:subClassOf :languageact ;
                        test:test6c58c70d_1fcf_4414_be44_85e5cba8571b "J. Neil Otte"@en ;
@@ -338,7 +337,7 @@ argumentsontology:complexargument rdf:type owl:Class ;
                        <http://www.w3.org/2004/02/skos/core#definition> "A language act in which an agent creates an argument by combining one or more premises or suppositions to support a conclusion."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/actofinferring
+###  http://www.github/argumentsontology/actofinferring
 :actofinferring rdf:type owl:Class ;
                 rdfs:subClassOf :languageact ;
                 <http://purl.obolibrary.org/obo/IAO_0000117> "Yonatan Schrieber"@en ;
@@ -348,7 +347,7 @@ argumentsontology:complexargument rdf:type owl:Class ;
                 <http://www.w3.org/2004/02/skos/core#definition> "A language act in which an agent uses one or more sentence contents to support, justify, entail, or assert the truth of another statement."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/argument
+###  http://www.github/argumentsontology/argument
 :argument rdf:type owl:Class ;
           rdfs:subClassOf :collectionofsentencecontents ,
                           [ rdf:type owl:Class ;
@@ -378,7 +377,7 @@ argumentsontology:complexargument rdf:type owl:Class ;
           <http://www.w3.org/2004/02/skos/core#example> "All men are mortal. Socrates is a man. Therefore, Socrates is mortal."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/collectionofsentencecontents
+###  http://www.github/argumentsontology/collectionofsentencecontents
 :collectionofsentencecontents rdf:type owl:Class ;
                               rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000958> ;
                               test:test6c58c70d_1fcf_4414_be44_85e5cba8571b "J. Neil Otte"@en ;
@@ -387,21 +386,21 @@ argumentsontology:complexargument rdf:type owl:Class ;
                               <http://www.w3.org/2004/02/skos/core#definition> "An information content entity that consists of two or more sentence contents."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/conclusion
+###  http://www.github/argumentsontology/conclusion
 :conclusion rdf:type owl:Class ;
             rdfs:subClassOf :sentencecontent ;
             rdfs:label "conclusion"@en ;
             <http://www.w3.org/2004/02/skos/core#definition> "A sentence content that is an affirmed or accepted output of an act of inferring, thought to be supported or justified by corresponding affirmed or accepted inputs, and is conclusion in an argument."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/expression
+###  http://www.github/argumentsontology/expression
 :expression rdf:type owl:Class ;
             rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000314> ;
             rdfs:label "expression"@en ;
             <http://www.w3.org/2004/02/skos/core#definition> "An information quality entity that consists in patterns of character shapes given conventional linguistic meaning."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/languageact
+###  http://www.github/argumentsontology/languageact
 :languageact rdf:type owl:Class ;
              rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000228> ;
              test:test6c58c70d_1fcf_4414_be44_85e5cba8571b "Yonatan Schrieber"@en ;
@@ -410,21 +409,21 @@ argumentsontology:complexargument rdf:type owl:Class ;
              <http://www.w3.org/2004/02/skos/core#definition> "A planned act undertaken by an agent through the use of a language."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/premise
+###  http://www.github/argumentsontology/premise
 :premise rdf:type owl:Class ;
          rdfs:subClassOf :sentencecontent ;
          rdfs:label "premise"@en ;
          <http://www.w3.org/2004/02/skos/core#definition> "A sentence content that is affirmed and is input to an act of inferring that provides support or justification for the conclusion of an argument."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/sentence
+###  http://www.github/argumentsontology/sentence
 :sentence rdf:type owl:Class ;
           rdfs:subClassOf :expression ;
           rdfs:label "sentence"@en ;
           <http://www.w3.org/2004/02/skos/core#definition> "An expression that must be usable on its own to express content."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/sentencecontent
+###  http://www.github/argumentsontology/sentencecontent
 :sentencecontent rdf:type owl:Class ;
                  rdfs:subClassOf <https://www.commoncoreontologies.org/ont00000958> ;
                  test:test6c58c70d_1fcf_4414_be44_85e5cba8571b "J. Neil Otte"@en ;
@@ -437,7 +436,7 @@ argumentsontology:complexargument rdf:type owl:Class ;
                                                                "\"The man walked into the bar.\""@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/statement
+###  http://www.github/argumentsontology/statement
 :statement rdf:type owl:Class ;
            rdfs:subClassOf :sentencecontent ;
            test:test6c58c70d_1fcf_4414_be44_85e5cba8571b "J. Neil Otte"@en ;
@@ -448,14 +447,14 @@ argumentsontology:complexargument rdf:type owl:Class ;
                                                          "\"The present king of France is bald.\""@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/subconclusion
+###  http://www.github/argumentsontology/subconclusion
 :subconclusion rdf:type owl:Class ;
                rdfs:subClassOf :sentencecontent ;
                rdfs:label "subconclusion"@en ;
                <http://www.w3.org/2004/02/skos/core#definition> "A sentence content that bears a subconclusion in relation to a complex argument."@en .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/supposition
+###  http://www.github/argumentsontology/supposition
 :supposition rdf:type owl:Class ;
              rdfs:subClassOf :sentencecontent ;
              rdfs:label "supposition"@en ;
@@ -478,7 +477,7 @@ argumentsontology:complexargument rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
-###  http://www.github/argO/2016/9/argumentsontology/AA
+###  http://www.github/argumentsontology/AA
 :AA rdf:type owl:NamedIndividual ,
              :argument ;
     :hasConclusion :AA3 ;
@@ -486,22 +485,22 @@ argumentsontology:complexargument rdf:type owl:Class ;
                 :AA2 .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/AA1
+###  http://www.github/argumentsontology/AA1
 :AA1 rdf:type owl:NamedIndividual ,
               :sentencecontent .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/AA2
+###  http://www.github/argumentsontology/AA2
 :AA2 rdf:type owl:NamedIndividual ,
               :statement .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/AA3
+###  http://www.github/argumentsontology/AA3
 :AA3 rdf:type owl:NamedIndividual ,
               :statement .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/AB
+###  http://www.github/argumentsontology/AB
 :AB rdf:type owl:NamedIndividual ,
              :argument ;
     :hasConclusion :AB3 ;
@@ -509,17 +508,17 @@ argumentsontology:complexargument rdf:type owl:Class ;
                 :AB2 .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/AB2
+###  http://www.github/argumentsontology/AB2
 :AB2 rdf:type owl:NamedIndividual ,
               :statement .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/AB3
+###  http://www.github/argumentsontology/AB3
 :AB3 rdf:type owl:NamedIndividual ,
               :statement .
 
 
-###  http://www.github/argO/2016/9/argumentsontology/AC
+###  http://www.github/argumentsontology/AC
 :AC rdf:type owl:NamedIndividual ,
              :argument ;
     :hasConclusion :AB3 ;
