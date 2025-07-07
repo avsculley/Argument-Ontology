@@ -160,8 +160,7 @@
              rdfs:domain :argument ;
              rdfs:range :actofargumentcreation ;
              rdfs:label "is created by"@en ;
-             <http://www.w3.org/2004/02/skos/core#definition> """A relation linking an argument to the act of argument creation that produced
-it."""@en .
+             <http://www.w3.org/2004/02/skos/core#definition> "A relation linking an argument to the act of argument creation that produced it."@en .
 
 
 ###  http://www.github/argumentsontology/negates
